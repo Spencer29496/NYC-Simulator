@@ -1,16 +1,16 @@
 :warning: Everything between << >> needs to be replaced (remove << >> after replacing)
 # CS110 Project Proposal
-# << Project Title >>
+# Final Project
 ## CS 110 Final Project
-### << Semester, Year >>
+### Fall, 2021
 ### [Assignment Description](https://docs.google.com/document/d/1H4R6yLL7som1lglyXWZ04RvTp_RvRFCCBn6sqv-82ps/edit#)
 
 << [https://github.com/<repo>](#) >>
 
 << [link to demo presentation slides](#) >>
 
-### Team: << team name >>
-#### << Team Members >>
+### Team: Coding Connoisseurs
+#### Matthew Kagan, Spencer Mines
 
 ***
 
