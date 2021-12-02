@@ -1,6 +1,7 @@
 import pygame
 import sys
 from src import button
+from src import Decisions
 
 class Controller:
 
@@ -19,7 +20,8 @@ class Controller:
 	
         while True:  
                 self.eventloop()
-
+                self.start_butt.draw(self.screen)
+                       
             # update models
         
 

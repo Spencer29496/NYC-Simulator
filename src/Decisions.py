@@ -1,5 +1,7 @@
-<<<<<<< HEAD
-a
-=======
-s
->>>>>>> c428c7c199aef60112c68366e54737d90c032dda
+import pygame
+from src import button
+
+class Decisions:
+	def __init__(self):
+		start_bt = pygame.image.load("assets/startbt.png")
+		self.start_butt = button.Button(458, 540, start_bt, 0.3)
