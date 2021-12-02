@@ -1,38 +1,19 @@
-from src import Player
-from src import Enemy
-from src import Projectile
-
 import pygame
-import random
-
+import sys
 
 class Controller:
 
     def __init__(self):
-        #configure pygame]
-        # setup pygame data
         self.window_width = 900
         self.window_height = 600
         pygame.init()
-        self.screen = pygame.display.set_mode((self.window_width, self.window_height))
-        self.background = pygame.Surface((self.window_width, self.window_height))
+        self.screen = pygame.display.set_mode(self.window_width, self.window_height)
+        self.background = pygame.image.load(startscreen.jpg)
         self.background.fill((250, 250, 250))
-        # held keys act like repeated strike
-        pygame.key.set_repeat(50, 500)
 
-        #create modle objects
-        self.player = Player.Player()
-        self.enemies = pygame.sprite.Group()
-        for e in range(3):
-            self.enemies.add(Enemy.Enemy(self.window_width, self.window_height))
-
-        self.projectiles = pygame.sprite.Group()
-        # cast existing groups to a tuple to add them together with other sprites and make a new group
-        self.all_sprites = pygame.sprite.Group(tuple(self.enemies) + (self.player,))
 
     def mainloop(self):
-        while True:  # one time through the loop is one frame (picture)
-            # check for events
+        while True:  
             self.eventloop()
 
             # update models
