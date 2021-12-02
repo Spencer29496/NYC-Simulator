@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-a
-=======
+
 import pygame
 
 class Button():
@@ -24,4 +22,4 @@ class Button():
 		surface.blit(self.image, (self.rect.x, self.rect.y))
 
 		return action
->>>>>>> 2e064c0dc156a1f150e7aa9df955a535073dc84c
+
