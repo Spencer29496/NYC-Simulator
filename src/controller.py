@@ -7,33 +7,27 @@ class Controller:
         pygame.init()
         self.window_width = 900
         self.window_height = 600
-<<<<<<< HEAD
-        pygame.init()
         self.screen = pygame.display.set_mode((self.window_width, self.window_height))
+        self.screen.fill((0,0,0))
         self.background = pygame.image.load("assets/startscreen.jpg")
-=======
-        self.screen = pygame.display.set_mode((self.window_width, self.window_height))
-        self.background = pygame.image.load("assets/startscreen.jpg")
+        self.screen.blit(self.background,(0,0))
 
->>>>>>> e9c673c579b6722b431f4d4e06262824fc796bb2
 
 
     def mainloop(self):
+	
         while True:  
-            self.eventloop()
+                self.eventloop()
 
-<<<<<<< HEAD
-            
-=======
             # update models
         
 
             # collisions
             
 
->>>>>>> e9c673c579b6722b431f4d4e06262824fc796bb2
+
             # update the screen
-            pygame.display.flip()
+                pygame.display.flip()
 
     # OPTIONAL: put the event loop in a seperate method just to break up the mainloop()
     def eventloop(self):
