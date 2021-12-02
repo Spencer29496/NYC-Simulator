@@ -4,18 +4,34 @@ import sys
 class Controller:
 
     def __init__(self):
+        pygame.init()
         self.window_width = 900
         self.window_height = 600
+<<<<<<< HEAD
         pygame.init()
         self.screen = pygame.display.set_mode((self.window_width, self.window_height))
         self.background = pygame.image.load("assets/startscreen.jpg")
+=======
+        self.screen = pygame.display.set_mode((self.window_width, self.window_height))
+        self.background = pygame.image.load("assets/startscreen.jpg")
+
+>>>>>>> e9c673c579b6722b431f4d4e06262824fc796bb2
 
 
     def mainloop(self):
         while True:  
             self.eventloop()
 
+<<<<<<< HEAD
             
+=======
+            # update models
+        
+
+            # collisions
+            
+
+>>>>>>> e9c673c579b6722b431f4d4e06262824fc796bb2
             # update the screen
             pygame.display.flip()
 
