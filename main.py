@@ -1,6 +1,8 @@
 import pygame
-
+from src import controller
 def main():
+	game = controller.Controller()
+	game.mainloop()
 	pygame.init
 	team = {"lead": "Spencer Mines and Matthew Kagan", "backend": "Matthew Kagan", "frontend": "Spencer Mines"}
 	print("Software Lead is:", team["lead"])

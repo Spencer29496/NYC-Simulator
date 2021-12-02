@@ -7,42 +7,15 @@ class Controller:
         self.window_width = 900
         self.window_height = 600
         pygame.init()
-        self.screen = pygame.display.set_mode(self.window_width, self.window_height)
-        self.background = pygame.image.load(startscreen.jpg)
-        self.background.fill((250, 250, 250))
+        self.screen = pygame.display.set_mode((self.window_width, self.window_height))
+        self.background = pygame.image.load("assets/startscreen.jpg")
 
 
     def mainloop(self):
         while True:  
             self.eventloop()
 
-            # update models
-            self.enemies.update()
-            self.projectiles.update()
-
-            # collisions
-            fight = pygame.sprite.spritecollide(self.player, self.enemies, False)
-            if fight:
-                for enemy in fight:
-                    if self.player.fight(enemy):
-                        enemy.kill()
-                    else:
-                        self.player.health -= 1
-
-            bullets = pygame.sprite.groupcollide(self.enemies, self.projectiles, False, True)
-            if bullets:
-                for enemy in bullets:
-                    enemy.pause()
-
-            # end the program
-            if self.player.health == 0:
-                return
-
-            # redraw
-            self.screen.blit(self.background, (0, 0))
-            self.all_sprites.draw(self.screen)
-            #self.projectiles.draw(self.screen)
-
+            
             # update the screen
             pygame.display.flip()
 
