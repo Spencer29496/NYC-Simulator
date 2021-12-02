@@ -13,6 +13,8 @@ class Controller:
         self.screen.fill((0,0,0))
         self.background = pygame.image.load("assets/startscreen.jpg")
         self.screen.blit(self.background,(0,0))
+        start_bt = pygame.image.load("assets/startbt.png")
+        self.start_butt = button.Button(458, 540, start_bt, 0.3)
 
 
 
@@ -33,12 +35,9 @@ class Controller:
 
     # OPTIONAL: put the event loop in a seperate method just to break up the mainloop()
     def eventloop(self):
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                exit()
-            elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_UP:
-                    self.player.move("U")
-                if event.key == pygame.K_DOWN:
-                    self.player.move("D")
+          # while self.background == pygame.image.load("assets/startscreen.jpg"):
+                   #start_bt = Decisions.Decisions("assets/startbt.png")
+                   #start_butt 
 
+                       
+            
