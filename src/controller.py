@@ -14,16 +14,16 @@ class Controller:
         self.screen = pygame.display.set_mode((self.window_width, self.window_height))
         self.screen.fill((0,0,0))
         self.background = pygame.image.load("assets/startscreen.jpg")
-        self.screen.blit(self.background,(0,0))
-        start_bt = pygame.image.load("assets/startbt.png")
-        self.start_butt = button.Button(458, 540, start_bt, 0.3)
-        mixer.music.load("assets/Frank_Sinatra.wav")
-        mixer.music.play()
-        pygame.display.set_caption('New York City Simulator')
-        fontObj = pygame.font.Font("assets/Fancy.ttf", 50)
-        textSurfaceObj = fontObj.render('New York City Simulator', True, (255,255,255), None)
-        textRectObj = textSurfaceObj.get_rect(center = (450,100))
-        self.screen.blit(textSurfaceObj,textRectObj)  
+        #self.screen.blit(self.background,(0,0))
+        #start_bt = pygame.image.load("assets/startbt.png")
+        #self.start_butt = button.Button(458, 540, start_bt, 0.3)
+        #mixer.music.load("assets/Frank_Sinatra.wav")
+        #mixer.music.play()
+        #pygame.display.set_caption('New York City Simulator')
+        #fontObj = pygame.font.Font("assets/Fancy.ttf", 50)
+        #textSurfaceObj = fontObj.render('New York City Simulator', True, (255,255,255), None)
+        #textRectObj = textSurfaceObj.get_rect(center = (450,100))
+        #self.screen.blit(textSurfaceObj,textRectObj)  
 
   
      
@@ -33,7 +33,11 @@ class Controller:
         while True:
             start_img = pygame.image.load("assets/start_bt.png")
             start_bt = button.Button(250,400,start_img,0.3)
-            #Decisions.Decisions.startScreen(self,self.screen,self.background)
+            b1 = pygame.image.load("assets/button_1.png")
+            bar1 = button.Button(60,390,b1,0.4)
+            b2 = pygame.image.load("assets/button_2.png")
+            bar2 = button.Button(500,390,b2,0.4) 
+            Decisions.Decisions.startScreen(self, self.screen,self.background)
             start_bt.draw(self.screen)        
             for event in pygame.event.get():
                 if start_bt.click(start_img,event) == True:
@@ -44,20 +48,15 @@ class Controller:
                     mixer.music.play()
                     pygame.display.update()
 
-                    #Decisions.Decisions.bar(self,self.screen) 
+                    Decisions.Decisions.bar(self,self.screen) 
+                    bar1.draw(self.screen)
+                    bar2.draw(self.screen)
+                    
+                    pygame.display.update()
                 if event.type == pygame.QUIT:
                     exit()
    
-            #self.eventloop()
-            #while self.background == pygame.image.load("assets/startscreen.jpg"):
-                #start_img = pygame.image.load("assets/start_bt.png")
-                #start_bt = button.Button(250,400,start_img,0.3)
-                #start_bt.draw(self.screen)
-                       
-            # update models
-        
-
-            # collisions
+     
             
 
 

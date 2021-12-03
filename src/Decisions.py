@@ -1,17 +1,10 @@
 import pygame
 import time
+from src import character
 from src import controller
 from pygame import mixer
 
 class Decisions:
-    def __init__(self, image):
-        self.image = pygame.image.load(image)
-
-
-	#def diffback(self):
-		
-		
-
     def __init__(self):
         pygame.init()
         mixer.init
@@ -24,8 +17,8 @@ class Decisions:
         fontObj = pygame.font.Font("assets/Fancy.ttf", 50)
         textSurfaceObj = fontObj.render('New York City Simulator', True, (255,255,255), None)
         textRectObj = textSurfaceObj.get_rect(center = (450,100))
-        mixer.music.load("assets/Frank_Sinatra.wav")
-        mixer.music.play()
+        #mixer.music.load("assets/Frank_Sinatra.wav")
+        #mixer.music.play()
         screen.blit(textSurfaceObj,textRectObj)
 
     def bar(self,screen):
@@ -35,4 +28,12 @@ class Decisions:
         mixer.music.load("assets/bar_music.wav")
         mixer.music.play()
         pygame.display.update()
+        barguy = pygame.image.load("assets/barfight.jpg")
+        bar_fight = character.Player(50, 200, barguy, 0.4)
+        bar_fight.draw(screen)
+        bar_fight.bar_fight(self.screen)
+        pygame.display.update()
+
+
+        
 
