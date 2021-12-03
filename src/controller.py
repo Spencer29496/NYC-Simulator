@@ -3,6 +3,7 @@ import sys
 from src import button
 from src import Decisions
 from pygame import mixer
+
 class Controller:
 
     def __init__(self):
@@ -15,13 +16,6 @@ class Controller:
         self.screen.fill((0,0,0))
         self.background = pygame.image.load("assets/startscreen.jpg")
         self.screen.blit(self.background,(0,0))
-        mixer.music.load("assets/Frank_Sinatra.wav")
-        mixer.music.play()
-        pygame.display.set_caption('New York City Simulator')
-        fontObj = pygame.font.Font("assets/Fancy.ttf", 50)
-        textSurfaceObj = fontObj.render('New York City Simulator', True, (255,255,255), None)
-        textRectObj = textSurfaceObj.get_rect(center = (450,100))
-        self.screen.blit(textSurfaceObj,textRectObj)  
 
   
      
@@ -31,8 +25,8 @@ class Controller:
         while True:
             start_img = pygame.image.load("assets/start_bt.png")
             start_bt = button.Button(250,400,start_img,0.3)
-            #Decisions.Decisions.startScreen(self,self.screen,self.background)
-            start_bt.draw(self.screen)        
+            Decisions.Decisions.startScreen(self)
+            start_bt.draw(self.screen)       
             for event in pygame.event.get():
                 if start_bt.click(start_img,event) == True:
                     bar = pygame.image.load("assets/bar.jpg")
