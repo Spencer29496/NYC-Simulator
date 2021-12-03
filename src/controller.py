@@ -14,16 +14,14 @@ class Controller:
         self.screen = pygame.display.set_mode((self.window_width, self.window_height))
         self.screen.fill((0,0,0))
         self.background = pygame.image.load("assets/startscreen.jpg")
-        #self.screen.blit(self.background,(0,0))
-        #start_bt = pygame.image.load("assets/startbt.png")
-        #self.start_butt = button.Button(458, 540, start_bt, 0.3)
-        #mixer.music.load("assets/Frank_Sinatra.wav")
-        #mixer.music.play()
-        #pygame.display.set_caption('New York City Simulator')
-        #fontObj = pygame.font.Font("assets/Fancy.ttf", 50)
-        #textSurfaceObj = fontObj.render('New York City Simulator', True, (255,255,255), None)
-        #textRectObj = textSurfaceObj.get_rect(center = (450,100))
-        #self.screen.blit(textSurfaceObj,textRectObj)  
+        self.screen.blit(self.background,(0,0))
+        mixer.music.load("assets/Frank_Sinatra.wav")
+        mixer.music.play()
+        pygame.display.set_caption('New York City Simulator')
+        fontObj = pygame.font.Font("assets/Fancy.ttf", 50)
+        textSurfaceObj = fontObj.render('New York City Simulator', True, (255,255,255), None)
+        textRectObj = textSurfaceObj.get_rect(center = (450,100))
+        self.screen.blit(textSurfaceObj,textRectObj)  
 
   
      
@@ -38,45 +36,38 @@ class Controller:
             b2 = pygame.image.load("assets/button_2.png")
             bar2 = button.Button(500,390,b2,0.4) 
             Decisions.Decisions.startScreen(self, self.screen,self.background)
-            start_bt.draw(self.screen)        
+            start_bt.draw(self.screen)     
             for event in pygame.event.get():
-                if start_bt.click(start_img,event) == True:
+                if start_bt.click(start_img,event) == True: 
                     bar = pygame.image.load("assets/bar.jpg")
                     self.background = pygame.transform.scale(bar, (self.window_width, self.window_height))
                     self.screen.blit(self.background,(0,0))
-                    mixer.music.load("assets/bar_music.wav")
-                    mixer.music.play()
                     pygame.display.update()
-
                     Decisions.Decisions.bar(self,self.screen) 
                     bar1.draw(self.screen)
                     bar2.draw(self.screen)
-                    
                     pygame.display.update()
+                    if bar2.click(start_img,event) == True:
+                        hospital = pygame.image.load("assets/hospital.png")
+                        self.background = pygame.transform.scale(bar, (self.window_width, self.window_height))
+                        self.screen.blit(self.background,(0,0))
+                        mixer.music.load("assets/bar_music.wav")
+                        mixer.music.play()
+                        pygame.display.update()
+                        Decisions.Decisions.hospitalBed(self,self.screen)
+                    if bar1.click(start_img,event) == True:
+                       alley = pygame.image.load("assets/alleyway.jpg")
+                       self.background = pygame.transform.scale(bar, (self.window_width, self.window_height))
+                       self.screen.blit(self.background,(0,0))
+                       mixer.music.load("assets/bar_music.wav")
+                       mixer.music.play()
+                       pygame.display.update()
+                       Decisions.Decisions.alleyWay(self,self.screen)
+                        
+                        
                 if event.type == pygame.QUIT:
                     exit()
    
      
             
 
-
-            # update the screen
-
-    # OPTIONAL: put the event loop in a seperate method just to break up the mainloop()
-
-    #def eventloop(self):
-          # while self.background == pygame.image.load("assets/startscreen.jpg"):
-                   #start_bt = Decisions.Decisions("assets/startbt.png")
-                   #start_butt 
-
-                       
-            
-    #def eventloop(self):
-        #for event in pygame.event.get():
-            #while self.background == pygame.image.load("assets/startscreen.jpg"):
-                #start_img = pygame.image.load("assets/start_bt.png")
-                #start_bt = button.Button(0,0,start_img,0.5)
-                #start_bt.draw(self.screen)
-            #if event.type == pygame.QUIT:
-                #exit()
-          

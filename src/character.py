@@ -19,5 +19,17 @@ class Player():
         textSurfaceObj = fontObj.render('A FIGHT BREAKS OUT!!!! WHICH DECISION WILL YOU MAKE', True, (255,255,255), (0,0,0))
         textRectObj = textSurfaceObj.get_rect(center = (450,100))
         screen.blit(textSurfaceObj,textRectObj)  
+   
+    def alley_fight(self, screen):
+        fontObj = pygame.font.Font("assets/Lato-Bold.ttf", 30)
+        textSurfaceObj = fontObj.render('YOU SEE A HOMELESS MAN. WILL YOU GIVE HIM MONEY?', True, (255,255,255), (0,0,0))
+        textRectObj = textSurfaceObj.get_rect(center = (450,100))
+        screen.blit(textSurfaceObj,textRectObj) 
        
+
+    def hospital(self, screen):
+        fontObj = pygame.font.Font("assets/Lato-Bold.ttf", 30)
+        textSurfaceObj = fontObj.render('YOU GOT BEAT UP. WELCOME TO THE HOSPITAL!!', True, (255,255,255), (0,0,0))
+        textRectObj = textSurfaceObj.get_rect(center = (450,100))
+        screen.blit(textSurfaceObj,textRectObj)
 

@@ -9,6 +9,8 @@ class Decisions:
         pygame.init()
         mixer.init
         self.window_width, self.window_height = pygame.display.get_surface().get_size()
+        self.color = (0,0,0)
+
 
     def startScreen(self,screen, background):
         background = pygame.image.load("assets/startscreen.jpg")
@@ -21,6 +23,11 @@ class Decisions:
         #mixer.music.play()
         screen.blit(textSurfaceObj,textRectObj)
 
+    def newScreen(self):
+        self.screen.fill(self.color) 
+        self.draw(self.screen) 
+
+
     def bar(self,screen):
         bar = pygame.image.load("assets/bar.jpg")
         self.background = pygame.transform.scale(bar, (self.window_width, self.window_height))
@@ -32,6 +39,29 @@ class Decisions:
         bar_fight = character.Player(50, 200, barguy, 0.4)
         bar_fight.draw(screen)
         bar_fight.bar_fight(self.screen)
+        pygame.display.update()
+
+    def alleyWay(self, screen):
+        alleyway = pygame.image.load("assets/alleyway.jpg")
+        self.background = pygame.transform.scale(alleyway, (self.window_width, self.window_height))
+        self.screen.blit(self.background,(0,0))
+        pygame.display.update()
+        homeless = pygame.image.load("assets/homeless.png")
+        street_guy = character.Player(300,350,homeless,0.4)
+        street_guy.draw(screen)
+        street_guy.alley_fight(self.screen)
+        pygame.display.update()
+
+
+    def hospitalBed(self, screen):
+        hospital = pygame.image.load("assets/hospital.png")
+        self.background = pygame.transform.scale(hospital, (self.window_width, self.window_height))
+        self.screen.blit(self.background,(0,0))
+        pygame.display.update()
+        doctor = pygame.image.load("assets/doctor.png")
+        medic = character.Player(550,200,doctor,0.3)
+        medic.draw(screen)
+        medic.hospital(self.screen)
         pygame.display.update()
 
 
