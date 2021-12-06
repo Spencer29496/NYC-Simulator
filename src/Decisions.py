@@ -26,6 +26,7 @@ class Decisions:
         mixer.music.load("assets/Frank_Sinatra.wav")
         mixer.music.play()
         self.screen.blit(textSurfaceObj,textRectObj)
+        pygame.display.update()
 
     def bar(self):
         bar = pygame.image.load("assets/bar.jpg")
@@ -39,6 +40,7 @@ class Decisions:
         bar_fight.bar_fight(self.screen)
         pygame.display.update()
 
+
     def alley(self):
         alley = pygame.image.load("assets/alleyway.jpg")
         self.background = pygame.transform.scale(alley, (self.window_width, self.window_height))
@@ -49,10 +51,16 @@ class Decisions:
         homeless.alley_guy(self.screen)
         pygame.display.update()
 
+
+
     def hospital(self):
         hospital = pygame.image.load("assets/hospital.png")
         self.background = pygame.transform.scale(hospital, (self.window_width, self.window_height))
         self.screen.blit(self.background,(0,0))
+        doctor = pygame.image.load("assets/doctor.png")
+        medic = character.Player(550,200,doctor,0.5)
+        medic.draw(self.screen)
+        medic.hospital(self.screen)
         pygame.display.update()
     
     def taxiHome(self):

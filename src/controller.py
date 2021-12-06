@@ -31,7 +31,6 @@ class Controller:
         self.alley2 = button.Button(0,0,self.b4,0)
         self.alley1.draw(self.screen)
         self.alley2.draw(self.screen)
-
   
 
 
@@ -40,20 +39,20 @@ class Controller:
         while True:
             if self.background == None:
                 Decisions.Decisions.startScreen(self)
-            if self.start_bt.draw(self.screen) == True:
+            if self.start_bt.draw(self.screen) == True: 
                 self.start_bt = button.Button(0,0,self.start_img,0)
                 Decisions.Decisions.bar(self)
                 self.bar1 = button.Button(60,390,self.b1,0.4)
-                self.bar2 = button.Button(500,390,self.b2,0.4)
                 self.bar1.draw(self.screen)
+                self.bar2 = button.Button(500,390,self.b2,0.4)
                 self.bar2.draw(self.screen)
                 pygame.display.update()
             if self.bar1.draw(self.screen) == True:
                 self.bar1 = button.Button(0,0,self.b1,0)
                 self.bar2 = button.Button(0,0,self.b2,0)
                 Decisions.Decisions.alley(self)
-                self.alley1 = button.Button(60,250,self.b3,0.5)
-                self.alley2 = button.Button(500,250,self.b4,0.5)
+                self.alley1 = button.Button(50,400,self.b3,0.5)
+                self.alley2 = button.Button(500,400,self.b4,0.5)
                 self.alley1.draw(self.screen)
                 self.alley2.draw(self.screen)
                 pygame.display.update()
@@ -84,3 +83,4 @@ class Controller:
             if event.type == pygame.QUIT:
                 exit()
           
+
