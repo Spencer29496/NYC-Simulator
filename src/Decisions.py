@@ -62,9 +62,20 @@ class Decisions:
         self.screen.blit(self.background,(0,0))
         pygame.display.update()
         doctor = pygame.image.load("assets/doctor.png")
-        medic = character.Player(550,200,doctor,0.3)
+        medic = character.Player(550,200,doctor,0.5)
         medic.draw(screen)
         medic.hospital(self.screen)
+        pygame.display.update()
+
+
+    def taxi_home(self, screen):
+        taxi = pygame.image.load("assets/taxi.jpg")
+        self.background = pygame.transform.scale(taxi, (self.window_width, self.window_height))
+        self.screen.blit(self.background,(0,0))
+        pygame.display.update()
+        taxi_man = pygame.image.load("assets/taxidriver.png")
+        taxi_guy = character.Player(550,200,taxi_man,0.3)
+        taxi_guy.draw(screen)
         pygame.display.update()
 
 
