@@ -18,18 +18,11 @@ class Player():
         fontObj = pygame.font.Font("assets/Lato-Bold.ttf", 30)
         textSurfaceObj = fontObj.render('A FIGHT BREAKS OUT!!!! WHICH DECISION WILL YOU MAKE', True, (255,255,255), (0,0,0))
         textRectObj = textSurfaceObj.get_rect(center = (450,100))
-        screen.blit(textSurfaceObj,textRectObj)  
-   
-    def alley_fight(self, screen):
-        fontObj = pygame.font.Font("assets/Lato-Bold.ttf", 30)
-        textSurfaceObj = fontObj.render('YOU SEE A HOMELESS MAN. WILL YOU GIVE HIM MONEY?', True, (255,255,255), (0,0,0))
-        textRectObj = textSurfaceObj.get_rect(center = (450,100))
-        screen.blit(textSurfaceObj,textRectObj) 
-       
+        screen.blit(textSurfaceObj,textRectObj)
 
-    def hospital(self, screen):
+    def alley_guy(self,screen):
         fontObj = pygame.font.Font("assets/Lato-Bold.ttf", 30)
-        textSurfaceObj = fontObj.render('YOU GOT BEAT UP. WELCOME TO THE HOSPITAL!!', True, (255,255,255), (0,0,0))
+        textSurfaceObj = fontObj.render('You see a homeless man! Do you give him money?', True, (255,255,255), (0,0,0))
         textRectObj = textSurfaceObj.get_rect(center = (450,100))
         screen.blit(textSurfaceObj,textRectObj)
 
@@ -38,4 +31,37 @@ class Player():
         textSurfaceObj = fontObj.render('YOU FIND A TAXI AFTER A LONG NIGHT. DO YOU PAY FOR THE DRIVE HOME?', True, (255,255,255), (0,0,0))
         textRectObj = textSurfaceObj.get_rect(center = (450,100))
         screen.blit(textSurfaceObj,textRectObj)
+
+    def alley_fight(self, screen):
+        fontObj = pygame.font.Font("assets/Lato-Bold.ttf", 30)
+        textSurfaceObj = fontObj.render('YOU SEE A HOMELESS MAN. WILL YOU GIVE HIM MONEY?', True, (255,255,255), (0,0,0))
+        textRectObj = textSurfaceObj.get_rect(center = (450,100))
+        screen.blit(textSurfaceObj,textRectObj) 
+
+    def hospital(self, screen):
+        fontObj = pygame.font.Font("assets/Lato-Bold.ttf", 30)
+        textSurfaceObj = fontObj.render('YOU GOT BEAT UP. WELCOME TO THE HOSPITAL!! YOU LOST!', True, (255,255,255), (0,0,0))
+        textRectObj = textSurfaceObj.get_rect(center = (450,100))
+        screen.blit(textSurfaceObj,textRectObj)
+
+    def taxi_time(self, screen):
+        fontObj = pygame.font.Font("assets/Lato-Bold.ttf", 25)
+        textSurfaceObj = fontObj.render('YOU FIND A TAXI AFTER A LONG NIGHT. DO YOU PAY FOR THE DRIVE HOME?', True, (255,255,255), (0,0,0))
+        textRectObj = textSurfaceObj.get_rect(center = (450,100))
+        screen.blit(textSurfaceObj,textRectObj)
+
+
+    def arrivedHome(self, screen):
+        fontObj = pygame.font.Font("assets/Lato-Bold.ttf", 25)
+        textSurfaceObj = fontObj.render('YOU ARRIVED HOME SAFE! CONGRATULATIONS!!', True, (255,255,255), (0,0,0))
+        textRectObj = textSurfaceObj.get_rect(center = (450,100))
+        screen.blit(textSurfaceObj,textRectObj)
+ 
+    def coldHospital(self, screen):
+        fontObj = pygame.font.Font("assets/Lato-Bold.ttf", 25)
+        textSurfaceObj = fontObj.render('YOU TRIED WALKING HOME AND GOT HYPOTHERMIA', True, (255,255,255), (0,0,0))
+        textRectObj = textSurfaceObj.get_rect(center = (450,100))
+        screen.blit(textSurfaceObj,textRectObj)
+ 
+
 

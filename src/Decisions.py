@@ -1,21 +1,22 @@
 import pygame
 import time
+from src import button
 from src import character
 from src import controller
 from pygame import mixer
 
 class Decisions:
     def __init__(self):
-        pygame.init()
+        pygame.init
         mixer.init()
+        pygame.font.init()
         self.window_width = 900
         self.window_height = 600
         self.screen = pygame.display.set_mode((self.window_width, self.window_height))
         self.screen.fill((0,0,0))
         self.background = None
 
-
-    def startScreen(self,screen, background):
+    def startScreen(self):
         self.background = pygame.image.load("assets/startscreen.jpg")
         self.screen.blit(self.background,(0,0))
         pygame.display.set_caption('New York City Simulator')
@@ -25,62 +26,71 @@ class Decisions:
         mixer.music.load("assets/Frank_Sinatra.wav")
         mixer.music.play()
         self.screen.blit(textSurfaceObj,textRectObj)
+        pygame.display.update()
 
-    def newScreen(self):
-        self.screen.fill(self.color) 
-        self.draw(self.screen) 
-
-
-    def bar(self,screen):
+    def bar(self):
         bar = pygame.image.load("assets/bar.jpg")
         self.background = pygame.transform.scale(bar, (self.window_width, self.window_height))
         self.screen.blit(self.background,(0,0))
         mixer.music.load("assets/bar_music.wav")
         mixer.music.play()
-        pygame.display.update()
         barguy = pygame.image.load("assets/barfight.jpg")
         bar_fight = character.Player(50, 200, barguy, 0.4)
-        bar_fight.draw(screen)
+        bar_fight.draw(self.screen)
         bar_fight.bar_fight(self.screen)
         pygame.display.update()
 
-    def alleyWay(self, screen):
-        alleyway = pygame.image.load("assets/alleyway.jpg")
-        self.background = pygame.transform.scale(alleyway, (self.window_width, self.window_height))
+
+    def alley(self):
+        alley = pygame.image.load("assets/alleyway.jpg")
+        self.background = pygame.transform.scale(alley, (self.window_width, self.window_height))
         self.screen.blit(self.background,(0,0))
-        pygame.display.update()
-        homeless = pygame.image.load("assets/homeless.png")
-        street_guy = character.Player(300,350,homeless,0.4)
-        street_guy.draw(screen)
-        street_guy.alley_fight(self.screen)
+        homeless_man = pygame.image.load("assets/homeless guy.png")
+        homeless = character.Player(300,300,homeless_man,.3)
+        homeless.draw(self.screen)
+        homeless.alley_guy(self.screen)
         pygame.display.update()
 
 
-    def hospitalBed(self, screen):
+
+    def hospital(self):
         hospital = pygame.image.load("assets/hospital.png")
         self.background = pygame.transform.scale(hospital, (self.window_width, self.window_height))
         self.screen.blit(self.background,(0,0))
-        pygame.display.update()
         doctor = pygame.image.load("assets/doctor.png")
         medic = character.Player(550,200,doctor,0.5)
-        medic.draw(screen)
+        medic.draw(self.screen)
         medic.hospital(self.screen)
         pygame.display.update()
-
-
-    def taxi_home(self, screen):
+    
+    def taxiHome(self):
         taxi = pygame.image.load("assets/taxi.jpg")
         self.background = pygame.transform.scale(taxi, (self.window_width, self.window_height))
         self.screen.blit(self.background,(0,0))
         pygame.display.update()
         taxi_man = pygame.image.load("assets/taxidriver.png")
-        taxi_guy = character.Player(550,200,taxi_man,0.3)
-        taxi_guy.draw(screen)
+        taxi_guy = character.Player(550,200,taxi_man,0.65)
+        taxi_guy.draw(self.screen)
+        taxi_guy.taxi_time(self.screen)
         pygame.display.update()
 
+    def finallyHome(self):
+        house = pygame.image.load("assets/house.png")
+        self.background = pygame.transform.scale(house, (self.window_width, self.window_height))
+        self.screen.blit(self.background,(0,0))
+        pygame.display.update()
+        children = pygame.image.load("assets/kids.png")
+        kids = character.Player(250,300,children,0.1)
+        kids.draw(self.screen)
+        kids.arrivedHome(self.screen)
+        pygame.display.update()
 
-
-
-
-        
-
+    def hospitalCold(self):
+        hospital = pygame.image.load("assets/hospital.png")
+        self.background = pygame.transform.scale(hospital, (self.window_width, self.window_height))
+        self.screen.blit(self.background,(0,0))
+        doctor = pygame.image.load("assets/doctor.png")
+        medic = character.Player(550,200,doctor,0.5)
+        medic.draw(self.screen)
+        medic.coldHospital(self.screen)
+        pygame.display.update()
