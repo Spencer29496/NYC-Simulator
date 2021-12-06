@@ -1,25 +1,20 @@
 import pygame
 import time
+from src import button
 from src import character
 from src import controller
 from pygame import mixer
 
-<<<<<<< HEAD
-class Decisions():
-=======
 class Decisions:
->>>>>>> bc761514ef8f8fa34a6afe25531c3f5d158dadae
     def __init__(self):
-        pygame.init()
+        pygame.init
         mixer.init()
+        pygame.font.init()
         self.window_width = 900
         self.window_height = 600
         self.screen = pygame.display.set_mode((self.window_width, self.window_height))
         self.screen.fill((0,0,0))
         self.background = None
-        self.screen.blit(self.background,(0,0))
-        mixer.music.load("assets/Frank_Sinatra.wav")
-        mixer.music.play() 
 
     def startScreen(self):
         self.background = pygame.image.load("assets/startscreen.jpg")
@@ -28,15 +23,9 @@ class Decisions:
         fontObj = pygame.font.Font("assets/Fancy.ttf", 50)
         textSurfaceObj = fontObj.render('New York City Simulator', True, (255,255,255), None)
         textRectObj = textSurfaceObj.get_rect(center = (450,100))
-<<<<<<< HEAD
         mixer.music.load("assets/Frank_Sinatra.wav")
-        mixer.music.play(-1, 0.0)
+        mixer.music.play()
         self.screen.blit(textSurfaceObj,textRectObj)
-=======
-        #mixer.music.load("assets/Frank_Sinatra.wav")
-        #mixer.music.play()
-        screen.blit(textSurfaceObj,textRectObj)
->>>>>>> bc761514ef8f8fa34a6afe25531c3f5d158dadae
 
     def bar(self):
         bar = pygame.image.load("assets/bar.jpg")
@@ -44,13 +33,36 @@ class Decisions:
         self.screen.blit(self.background,(0,0))
         mixer.music.load("assets/bar_music.wav")
         mixer.music.play()
-        pygame.display.update()
         barguy = pygame.image.load("assets/barfight.jpg")
         bar_fight = character.Player(50, 200, barguy, 0.4)
-        bar_fight.draw(screen)
+        bar_fight.draw(self.screen)
         bar_fight.bar_fight(self.screen)
         pygame.display.update()
 
+    def alley(self):
+        alley = pygame.image.load("assets/alleyway.jpg")
+        self.background = pygame.transform.scale(alley, (self.window_width, self.window_height))
+        self.screen.blit(self.background,(0,0))
+        homeless_man = pygame.image.load("assets/homeless guy.png")
+        homeless = character.Player(300,300,homeless_man,.3)
+        homeless.draw(self.screen)
+        homeless.alley_guy(self.screen)
+        pygame.display.update()
 
-        
+    def hospital(self):
+        hospital = pygame.image.load("assets/hospital.png")
+        self.background = pygame.transform.scale(hospital, (self.window_width, self.window_height))
+        self.screen.blit(self.background,(0,0))
+        pygame.display.update()
+    
+    def taxiHome(self):
+        taxi = pygame.image.load("assets/taxi.jpg")
+        self.background = pygame.transform.scale(taxi, (self.window_width, self.window_height))
+        self.screen.blit(self.background,(0,0))
+        pygame.display.update()
+        taxi_man = pygame.image.load("assets/taxidriver.png")
+        taxi_guy = character.Player(550,200,taxi_man,0.3)
+        taxi_guy.draw(self.screen)
+        taxi_guy.taxi_time(self.screen)
+        pygame.display.update()
 

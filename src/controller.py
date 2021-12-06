@@ -2,6 +2,7 @@ import pygame
 import sys
 from src import button
 from src import Decisions
+from src import character
 from pygame import mixer
 
 class Controller:
@@ -14,58 +15,61 @@ class Controller:
         self.window_height = 600
         self.screen = pygame.display.set_mode((self.window_width, self.window_height))
         self.screen.fill((0,0,0))
-        self.background = pygame.image.load("assets/startscreen.jpg")
-<<<<<<< HEAD
-        self.screen.blit(self.background,(0,0))
-=======
-        #self.screen.blit(self.background,(0,0))
-        #start_bt = pygame.image.load("assets/startbt.png")
-        #self.start_butt = button.Button(458, 540, start_bt, 0.3)
-        #mixer.music.load("assets/Frank_Sinatra.wav")
-        #mixer.music.play()
-        #pygame.display.set_caption('New York City Simulator')
-        #fontObj = pygame.font.Font("assets/Fancy.ttf", 50)
-        #textSurfaceObj = fontObj.render('New York City Simulator', True, (255,255,255), None)
-        #textRectObj = textSurfaceObj.get_rect(center = (450,100))
-        #self.screen.blit(textSurfaceObj,textRectObj)  
->>>>>>> bc761514ef8f8fa34a6afe25531c3f5d158dadae
+        self.background = None
+        self.start_img = pygame.image.load("assets/start_bt.png")
+        self.start_bt = button.Button(250,400,self.start_img,0.3)
+        self.start_bt.draw(self.screen)
+        self.b1 = pygame.image.load("assets/button_1.png")
+        self.bar1 = button.Button(0,0,self.b1,0)
+        self.b2 = pygame.image.load("assets/button_2.png")
+        self.bar2 = button.Button(0,0,self.b2,0)
+        self.bar1.draw(self.screen)
+        self.bar2.draw(self.screen)
+        self.b3 = pygame.image.load("assets/button_3.png")
+        self.alley1 = button.Button(0,0,self.b3,0)
+        self.b4 = pygame.image.load("assets/button_4.png")
+        self.alley2 = button.Button(0,0,self.b4,0)
+        self.alley1.draw(self.screen)
+        self.alley2.draw(self.screen)
 
   
-     
+
 
     def mainloop(self):
-      
+    
         while True:
-            start_img = pygame.image.load("assets/start_bt.png")
-            start_bt = button.Button(250,400,start_img,0.3)
-<<<<<<< HEAD
-            Decisions.Decisions.startScreen(self)
-            start_bt.draw(self.screen)       
-=======
-            b1 = pygame.image.load("assets/button_1.png")
-            bar1 = button.Button(60,390,b1,0.4)
-            b2 = pygame.image.load("assets/button_2.png")
-            bar2 = button.Button(500,390,b2,0.4) 
-            Decisions.Decisions.startScreen(self, self.screen,self.background)
-            start_bt.draw(self.screen)        
->>>>>>> bc761514ef8f8fa34a6afe25531c3f5d158dadae
+            if self.background == None:
+                Decisions.Decisions.startScreen(self)
+            if self.start_bt.draw(self.screen) == True:
+                self.start_bt = button.Button(0,0,self.start_img,0)
+                Decisions.Decisions.bar(self)
+                self.bar1 = button.Button(60,390,self.b1,0.4)
+                self.bar2 = button.Button(500,390,self.b2,0.4)
+                self.bar1.draw(self.screen)
+                self.bar2.draw(self.screen)
+                pygame.display.update()
+            if self.bar1.draw(self.screen) == True:
+                self.bar1 = button.Button(0,0,self.b1,0)
+                self.bar2 = button.Button(0,0,self.b2,0)
+                Decisions.Decisions.alley(self)
+                self.alley1 = button.Button(60,250,self.b3,0.5)
+                self.alley2 = button.Button(500,250,self.b4,0.5)
+                self.alley1.draw(self.screen)
+                self.alley2.draw(self.screen)
+                pygame.display.update()
+            if self.alley1.draw(self.screen) == True:
+                self.alley1 = button.Button(0,0,self.b3,0)
+                self.alley2 = button.Button(0,0,self.b4,0)
+                Decisions.Decisions.taxiHome(self)
+            if self.bar2.draw(self.screen) == True:
+                self.bar1 = button.Button(0,0,self.b1,0)
+                self.bar2 = button.Button(0,0,self.b2,0)
+                Decisions.Decisions.hospital(self)
+            
             for event in pygame.event.get():
-                if start_bt.click(start_img,event) == True:
-                    bar = pygame.image.load("assets/bar.jpg")
-                    self.background = pygame.transform.scale(bar, (self.window_width, self.window_height))
-                    self.screen.blit(self.background,(0,0))
-                    mixer.music.load("assets/bar_music.wav")
-                    mixer.music.play()
-                    pygame.display.update()
-
-                    Decisions.Decisions.bar(self,self.screen) 
-                    bar1.draw(self.screen)
-                    bar2.draw(self.screen)
-                    
-                    pygame.display.update()
                 if event.type == pygame.QUIT:
                     exit()
-   
+                    
      
             
 
@@ -74,19 +78,9 @@ class Controller:
 
     # OPTIONAL: put the event loop in a seperate method just to break up the mainloop()
 
-    #def eventloop(self):
-          # while self.background == pygame.image.load("assets/startscreen.jpg"):
-                   #start_bt = Decisions.Decisions("assets/startbt.png")
-                   #start_butt 
-
-                       
             
-    #def eventloop(self):
-        #for event in pygame.event.get():
-            #while self.background == pygame.image.load("assets/startscreen.jpg"):
-                #start_img = pygame.image.load("assets/start_bt.png")
-                #start_bt = button.Button(0,0,start_img,0.5)
-                #start_bt.draw(self.screen)
-            #if event.type == pygame.QUIT:
-                #exit()
+    def eventloop(self):
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                exit()
           
