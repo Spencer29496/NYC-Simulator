@@ -37,7 +37,9 @@ class Controller:
         self.taxi2 = button.Button(0,0,self.b6,0)
         self.taxi1.draw(self.screen)
         self.taxi2.draw(self.screen)
-
+        self.b7 = pygame.image.load("assets/back.png")
+        self.back = button.Button(0,0,self.b7,0)
+        self.back.draw(self.screen)
 
     def mainloop(self):
     
@@ -78,14 +80,47 @@ class Controller:
                 self.bar1 = button.Button(0,0,self.b1,0)
                 self.bar2 = button.Button(0,0,self.b2,0)
                 Decisions.Decisions.hospital(self)
+                self.back = button.Button(270,390,self.b7,0.4)
+                self.back.draw(self.screen)
+            if self.back.draw(self.screen) == True:
+                self.back = button.Button(0,0,self.b7,0)
+                self.start_bt = button.Button(0,0,self.start_img,0)
+                Decisions.Decisions.bar(self)
+                self.bar1 = button.Button(60,390,self.b1,0.4)
+                self.bar1.draw(self.screen)
+                self.bar2 = button.Button(500,390,self.b2,0.4)
+                self.bar2.draw(self.screen)
+                pygame.display.update()
             if self.alley2.draw(self.screen) == True:
                 self.alley1 = button.Button(0,0,self.b3,0)
                 self.alley2 = button.Button(0,0,self.b4,0)
                 Decisions.Decisions.hospital(self)
+                self.back = button.Button(270,390,self.b7,0.4)
+                self.back.draw(self.screen)
+            if self.back.draw(self.screen) == True:
+                self.back = button.Button(0,0,self.b7,0)
+                self.start_bt = button.Button(0,0,self.start_img,0)
+                Decisions.Decisions.alley(self)
+                self.alley1 = button.Button(60,390,self.b1,0.4)
+                self.alley1.draw(self.screen)
+                self.alley2 = button.Button(500,390,self.b2,0.4)
+                self.alley2.draw(self.screen)
+                pygame.display.update()
             if self.taxi2.draw(self.screen) == True:
                 self.taxi1 = button.Button(0,0,self.b5,0)
                 self.taxi2 = button.Button(0,0,self.b6,0)
                 Decisions.Decisions.hospitalCold(self)
+                self.back = button.Button(270,390,self.b7,0.4)
+                self.back.draw(self.screen)
+            if self.back.draw(self.screen) == True:
+                self.back = button.Button(0,0,self.b7,0)
+                self.start_bt = button.Button(0,0,self.start_img,0)
+                Decisions.Decisions.alley(self)
+                self.alley1 = button.Button(60,390,self.b1,0.4)
+                self.alley1.draw(self.screen)
+                self.alley2 = button.Button(500,390,self.b2,0.4)
+                self.alley2.draw(self.screen)
+                pygame.display.update()
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     exit()
