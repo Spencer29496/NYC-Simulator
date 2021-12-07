@@ -4,6 +4,7 @@ from src import button
 from src import character
 from src import controller
 from pygame import mixer
+import json
 
 class Decisions:
     def __init__(self):
@@ -21,11 +22,17 @@ class Decisions:
         self.screen.blit(self.background,(0,0))
         pygame.display.set_caption('New York City Simulator')
         fontObj = pygame.font.Font("assets/Fancy.ttf", 50)
+        fontObj2 = pygame.font.Font("assets/Lato-Bold.ttf", 30)
         textSurfaceObj = fontObj.render('New York City Simulator', True, (255,255,255), None)
         textRectObj = textSurfaceObj.get_rect(center = (450,100))
+        fptr = open("src/data.json" , "r")
+        objects = json.load(fptr)
+        gameSurfaceObj = fontObj2.render("Furthest stage last playthrough:" + objects['Furthest stage'], True, (255,255,255), None)
+        gameRectObj = gameSurfaceObj.get_rect(center = (450,200))
         mixer.music.load("assets/Frank_Sinatra.wav")
         mixer.music.play()
         self.screen.blit(textSurfaceObj,textRectObj)
+        self.screen.blit(gameSurfaceObj,gameRectObj)
         pygame.display.update()
 
     def bar(self):
