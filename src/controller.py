@@ -4,6 +4,7 @@ from src import button
 from src import Decisions
 from src import character
 from pygame import mixer
+import json
 
 class Controller:
 
