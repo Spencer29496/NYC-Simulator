@@ -4,6 +4,7 @@ from src import button
 from src import Decisions
 from src import character
 from pygame import mixer
+import json
 
 class Controller:
 
@@ -37,15 +38,16 @@ class Controller:
         self.taxi2 = button.Button(0,0,self.b6,0)
         self.taxi1.draw(self.screen)
         self.taxi2.draw(self.screen)
-        self.b7 = pygame.image.load("assets/back.png")
-        self.back = button.Button(0,0,self.b7,0)
-        self.back.draw(self.screen)
+        
 
     def mainloop(self):
     
         while True:
             if self.background == None:
                 Decisions.Decisions.startScreen(self)
+                fptr = open("src/data.json" , "r")
+                objects = json.load(fptr)
+                print("Furthest stage last playthrough:" + objects['Furthest stage'])
             if self.start_bt.draw(self.screen) == True: 
                 self.start_bt = button.Button(0,0,self.start_img,0)
                 Decisions.Decisions.bar(self)
@@ -80,47 +82,35 @@ class Controller:
                 self.bar1 = button.Button(0,0,self.b1,0)
                 self.bar2 = button.Button(0,0,self.b2,0)
                 Decisions.Decisions.hospital(self)
-                self.back = button.Button(270,390,self.b7,0.4)
-                self.back.draw(self.screen)
-            if self.back.draw(self.screen) == True:
-                self.back = button.Button(0,0,self.b7,0)
-                self.start_bt = button.Button(0,0,self.start_img,0)
-                Decisions.Decisions.bar(self)
-                self.bar1 = button.Button(60,390,self.b1,0.4)
-                self.bar1.draw(self.screen)
-                self.bar2 = button.Button(500,390,self.b2,0.4)
-                self.bar2.draw(self.screen)
-                pygame.display.update()
+                fptr = open("src/data.json" , "r")
+                objects = json.load(fptr)
+                fptr.close()
+                newData = objects["Furthest stage"] = "Bar"
+                fptr = open("src/data.json", "w+")
+                fptr.write(json.dumps(objects))
+                fptr.close()
             if self.alley2.draw(self.screen) == True:
                 self.alley1 = button.Button(0,0,self.b3,0)
                 self.alley2 = button.Button(0,0,self.b4,0)
                 Decisions.Decisions.hospital(self)
-                self.back = button.Button(270,390,self.b7,0.4)
-                self.back.draw(self.screen)
-            if self.back.draw(self.screen) == True:
-                self.back = button.Button(0,0,self.b7,0)
-                self.start_bt = button.Button(0,0,self.start_img,0)
-                Decisions.Decisions.alley(self)
-                self.alley1 = button.Button(60,390,self.b1,0.4)
-                self.alley1.draw(self.screen)
-                self.alley2 = button.Button(500,390,self.b2,0.4)
-                self.alley2.draw(self.screen)
-                pygame.display.update()
+                fptr = open("src/data.json" , "r")
+                objects = json.load(fptr)
+                fptr.close()
+                newData = objects["Furthest stage"] = "Alley"
+                fptr = open("src/data.json", "w+")
+                fptr.write(json.dumps(objects))
+                fptr.close()
             if self.taxi2.draw(self.screen) == True:
                 self.taxi1 = button.Button(0,0,self.b5,0)
                 self.taxi2 = button.Button(0,0,self.b6,0)
                 Decisions.Decisions.hospitalCold(self)
-                self.back = button.Button(270,390,self.b7,0.4)
-                self.back.draw(self.screen)
-            if self.back.draw(self.screen) == True:
-                self.back = button.Button(0,0,self.b7,0)
-                self.start_bt = button.Button(0,0,self.start_img,0)
-                Decisions.Decisions.alley(self)
-                self.alley1 = button.Button(60,390,self.b1,0.4)
-                self.alley1.draw(self.screen)
-                self.alley2 = button.Button(500,390,self.b2,0.4)
-                self.alley2.draw(self.screen)
-                pygame.display.update()
+                fptr = open("src/data.json" , "r")
+                objects = json.load(fptr)
+                fptr.close()
+                newData = objects["Furthest stage"] = "Taxi"
+                fptr = open("src/data.json", "w+")
+                fptr.write(json.dumps(objects))
+                fptr.close()
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     exit()
