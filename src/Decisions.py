@@ -1,8 +1,6 @@
 import pygame
-import time
 from src import button
 from src import character
-from src import controller
 from pygame import mixer
 import json
 

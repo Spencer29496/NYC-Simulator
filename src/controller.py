@@ -1,5 +1,4 @@
 import pygame
-import sys
 from src import button
 from src import Decisions
 from src import character
