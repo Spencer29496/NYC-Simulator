@@ -11,9 +11,9 @@
 >>>>>>> 6e791181b31cc230b81960f8f0ba399d36f07f69
 ### [Assignment Description](https://docs.google.com/document/d/1H4R6yLL7som1lglyXWZ04RvTp_RvRFCCBn6sqv-82ps/edit#)
 
-<< [https://github.com/<repo>](#) >>
+<< [https://github.com/bucs110a0fall21/final-project-coding-connoisseurs.git](#) >>
 
-<< [link to demo presentation slides](#) >>
+<< [https://docs.google.com/presentation/d/1ITYK472sU1KKtN6VeJiYfvRO0gfVS_N9jdgJbk3mNJo/edit#slide=id.g1069d7b2fee_0_110](#) >>
 
 <<<<<<< HEAD
 ### Team: Coding Connoisseurs
@@ -44,8 +44,8 @@
         * https://www.pygame.org/docs/
         * This module is used to create the screen and game
 * Class Interface Design
-    * << A simple drawing that shows the class relationships in your code (see below for an example). >>
-        * ![class diagram](assets/Diagram.jpg)
+    * 
+        * !(assets/Diagram.jpg)
     * This does not need to be overly detailed, but should show how your code fits into the Model/View/Controller paradigm.
 * Classes
     * Contoller class - sets the instance variables for the game and carries out the process of loading all the GUI and image components onto the screen
@@ -57,33 +57,64 @@
 
 The Project is broken down into the following file structure:
 * main.py
-* bin
-    * <all of your python files should go here>
+* src
+    * button.py
+    * Decisions.py
+    * controller.py
+    * character.py
 * assets
-    * <all of your media, i.e. images, font files, etc, should go here)
+    * Diagram.jpg
+    * alleyway.jpg
+    * button_1.png
+    * back.png
+    * button_2.png
+    * button_3.png
+    * button_4.png
+    * button_5.png
+    * button_6.png
+    * bar.jpg
+    * bar_music.wav
+    * city.wav
+    * doctor.png
+    * Fancy.ttf
+    * class_diagram.jpg
+    * Frank_Sinatra.wav
+    * homeless guy.png
+    * home.wav
+    * honking.wav
+    * hospital.png
+    * hospital.wav
+    * house.png
+    * kids.png
+    * Lato-Bold.ttf
+    * start_bt.png
+    * startscreen.jpg
+    * taxidriver.png
+    * taxi.jpg
+    * taxi.wav
+   
 * etc
-    * <This is a catch all folder for things that are not part of your project, but you want to keep with your project. Your demo video should go here.>
-
+    * foldercontents.txt
 ***
 
 ## Tasks and Responsibilities *(Software Lead)*
 * You must outline the team member roles and who was responsible for each class/method, both individual and collaborative.
 
-### Software Lead - << name >>
+### Software Lead - Matthew Kagan & Spencer Mines
 
-<< Worked as integration specialist by... >>
+Shared the responsiblity of integrating the GUI button into the controller class and making sure the classes all aligned and worked properly when imported into another python file. 
 
-### Front End Specialist - << name >>
+### Front End Specialist - Spencer Mines
 
-<< Front-end lead conducted significant research on... >>
+Created the controller class, set up the starting screen and captions and worked with the backend in helping integrate other classes into the controller.
 
-### Back End Specialist - << name >>
+### Back End Specialist - Matthew Kagan
 
-<< The back end specialist... >>
+Created the button, decisions and player class and the methods inside of them, as well as worked with the front end in order to incorporate afformentioned classes into the game loop.
 
 ## Testing *(Software Lead)*
-* << Describe your testing strategy for your project. >>
-    * << Example >>
+* Trial and error testing strategy. We ran the code everytime a new feature was added and made sure it worked properly and the game was how we wanted it. 
+    * When adding the button feature, we used trial and error in order to make sure the button on screen can only be activated (clicked) once and no longer be in use after.
 
 * Your ATP
 
