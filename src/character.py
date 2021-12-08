@@ -52,8 +52,8 @@ class Player():
        args(screen): the screen
        return: none
        """
-        fontObj = pygame.font.Font("assets/Lato-Bold.ttf", 30)
-        textSurfaceObj = fontObj.render('YOU FIND A TAXI AFTER A LONG NIGHT. DO YOU PAY FOR THE DRIVE HOME?', True, (255,255,255), (0,0,0))
+        fontObj = pygame.font.Font("assets/Lato-Bold.ttf", 25)
+        textSurfaceObj = fontObj.render('YOU FIND A TAXI AFTER A LONG NIGHT. DO YOU PAY FOR THE DRIVE ?', True, (255,255,255), (0,0,0))
         textRectObj = textSurfaceObj.get_rect(center = (450,100))
         screen.blit(textSurfaceObj,textRectObj)
 
