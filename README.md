@@ -32,21 +32,17 @@
 
 ## User Interface Design *(Front End Specialist)*
 
-      ![](assets/startimage.png)
+    * ![](assets/startimage.png)
+    - Start menu which has a GUI button to initiate the game
 
-      - Start menu which has a GUI button to initiate the game
+    * ![](assets/barimage.png)
+    - The first loacation of the adventure game which has 2 buttons that lead to different places
 
-      ![](assets/barimage.png)
+    * ![](assets/alleyimage.png)
+    - The second location of the game. If the right button was chosen in the bar, you end up in the alley with 2 more options
 
-      - The first loacation of the adventure game which has 2 buttons that lead to different places
-
-      ![](assets/alleyimage.png)
-
-      - The second location of the game. If the right button was chosen in the bar, you end up in the alley with 2 more options
-
-      ![](assets/taxiimage.png)
-
-      - The last options in the game are on this screen, if chosen right you will win
+    * ![](assets/taxiimage.png)
+    - The last options in the game are on this screen, if chosen right you will win
 
 ***        
 
