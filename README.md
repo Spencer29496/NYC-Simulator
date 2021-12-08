@@ -100,6 +100,10 @@ The Project is broken down into the following file structure:
     * taxidriver.png
     * taxi.jpg
     * taxi.wav
+    * startimage.png
+    * barimage.png
+    * alleyimage.png
+    * taxiimage.png
    
 * etc
     * foldercontents.txt
