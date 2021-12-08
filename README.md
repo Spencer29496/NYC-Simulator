@@ -31,9 +31,14 @@
 ***    
 
 ## User Interface Design *(Front End Specialist)*
-* << A wireframe or drawing of the user interface concept along with a short description of the interface. You should have one for each screen in your program. >>
-    * For example, if your program has a start screen, game screen, and game over screen, you should include a wireframe / screenshot / drawing of each one and a short description of the components
-* << You should also have a screenshot of each screen for your final GUI >>
+    * ![](assets/startimage.png)
+      - Start menu which has a GUI button to initiate the game
+    * ![](assets/barimage.png)
+      - The first loacation of the adventure game which has 2 buttons that lead to different places
+    * ![](assets/alleyimage.png)
+      - The second location of the game. If the right button was chosen in the bar, you end up in the alley with 2 more options
+    * ![](assets/taxiimage.png)
+      - The last options in the game are on this screen, if chosen right you will win
 
 ***        
 
@@ -44,10 +49,6 @@
         * https://www.pygame.org/docs/
         * This module is used to create the screen and game
 * Class Interface Design
-    * ![](assets/startimage.png)
-    * ![](assets/barimage.png)
-    * ![](assets/alleyimage.png)
-    * ![](assets/taxiimage.png)
     * ![](assets/Diagram.jpg)
     * This does not need to be overly detailed, but should show how your code fits into the Model/View/Controller paradigm.
 * Classes
