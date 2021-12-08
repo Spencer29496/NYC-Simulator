@@ -78,6 +78,13 @@ class Controller:
                 self.taxi1 = button.Button(0,0,self.b5,0)
                 self.taxi2 = button.Button(0,0,self.b6,0)
                 Decisions.Decisions.finallyHome(self)
+                fptr = open("src/data.json" , "r")
+                objects = json.load(fptr)
+                fptr.close()
+                newData = objects["Furthest stage"] = "Home"
+                fptr = open("src/data.json", "w+")
+                fptr.write(json.dumps(objects))
+                fptr.close()
             if self.bar2.draw(self.screen) == True:
                 self.bar1 = button.Button(0,0,self.b1,0)
                 self.bar2 = button.Button(0,0,self.b2,0)
