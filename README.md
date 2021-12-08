@@ -26,7 +26,7 @@
 ***
 
 ## Project Description *(Software Lead)*
-<< Give an overview of your project >>
+ This project is a choose your own adventure game based in New York City where there are clickable GUI buttons and choices that will either progress you in the game or cause you to lose.
 
 ***    
 
@@ -39,7 +39,7 @@
 
 ## Program Design *(Backend Specialist)*
 * Non-Standard libraries
-    * << You should have a list of any additional libraries or modules used (pygame, request) beyond non-standard python. >>
+    * N/A
     * For each additional module you should include
         * url for the module documentation
         * a short description of the module
