@@ -9,6 +9,11 @@ import json
 class Controller:
 
     def __init__(self):
+        """
+       This method sets the instance variables
+       args: none
+       return: none
+       """
         pygame.init
         mixer.init()
         pygame.font.init()
@@ -41,6 +46,11 @@ class Controller:
         
 
     def mainloop(self):
+        """
+       This method runs the game
+       args: none
+       return: none
+       """
     
         while True:
             if self.background == None:
@@ -132,6 +142,11 @@ class Controller:
 
             
     def eventloop(self):
+        """
+       This method sets qutting sequence
+       args: none
+       return: none
+       """
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 exit()

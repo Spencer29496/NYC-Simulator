@@ -8,6 +8,11 @@ import json
 
 class Decisions:
     def __init__(self):
+        """
+       This method sets the instance variables
+       args: none
+       return: none
+       """
         pygame.init
         mixer.init()
         pygame.font.init()
@@ -18,6 +23,11 @@ class Decisions:
         self.background = None
 
     def startScreen(self):
+        """
+       This method sets the start screen background and music
+       args: none
+       return: none
+       """
         self.background = pygame.image.load("assets/startscreen.jpg")
         self.screen.blit(self.background,(0,0))
         pygame.display.set_caption('New York City Simulator')
@@ -36,6 +46,11 @@ class Decisions:
         pygame.display.update()
 
     def bar(self):
+        """
+       This method sets the bar screen background and music
+       args: none
+       return: none
+       """
         bar = pygame.image.load("assets/bar.jpg")
         self.background = pygame.transform.scale(bar, (self.window_width, self.window_height))
         self.screen.blit(self.background,(0,0))
@@ -49,6 +64,11 @@ class Decisions:
 
 
     def alley(self):
+        """
+       This method sets the alley screen background and music
+       args: none
+       return: none
+       """
         alley = pygame.image.load("assets/alleyway.jpg")
         self.background = pygame.transform.scale(alley, (self.window_width, self.window_height))
         self.screen.blit(self.background,(0,0))
@@ -62,6 +82,11 @@ class Decisions:
 
 
     def hospital(self):
+        """
+       This method sets the hospital screen background and music
+       args: none
+       return: none
+       """
         hospital = pygame.image.load("assets/hospital.png")
         self.background = pygame.transform.scale(hospital, (self.window_width, self.window_height))
         self.screen.blit(self.background,(0,0))
@@ -74,6 +99,11 @@ class Decisions:
         pygame.display.update()
     
     def taxiHome(self):
+        """
+       This method sets the taxi screen background and music
+       args: none
+       return: none
+       """
         taxi = pygame.image.load("assets/taxi.jpg")
         self.background = pygame.transform.scale(taxi, (self.window_width, self.window_height))
         self.screen.blit(self.background,(0,0))
@@ -87,6 +117,11 @@ class Decisions:
         pygame.display.update()
 
     def finallyHome(self):
+        """
+       This method sets the home screen background and music
+       args: none
+       return: none
+       """
         house = pygame.image.load("assets/house.png")
         self.background = pygame.transform.scale(house, (self.window_width, self.window_height))
         self.screen.blit(self.background,(0,0))
@@ -100,6 +135,11 @@ class Decisions:
         pygame.display.update()
 
     def hospitalCold(self):
+        """
+       This method sets the hypothermia screen background and music
+       args: none
+       return: none
+       """
         hospital = pygame.image.load("assets/hospital.png")
         self.background = pygame.transform.scale(hospital, (self.window_width, self.window_height))
         self.screen.blit(self.background,(0,0))

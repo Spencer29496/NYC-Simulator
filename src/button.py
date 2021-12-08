@@ -3,6 +3,11 @@ import pygame
 
 class Button():
 	def __init__(self, x, y, image, scale):
+		"""
+       This method sets the instance variables
+       args(x,y,image,scale): the coordinates, image and scale of the button
+       return: none
+       """
 		width = image.get_width()
 		height = image.get_height()
 		self.image = pygame.transform.scale(image, (int(width * scale), int(height * scale)))
@@ -11,6 +16,11 @@ class Button():
 		self.clicked = False
 
 	def draw(self,surface):
+		"""
+       This method draws the button on the screen and checks to see if it is clicked
+       args(surface): the screen
+       return: action
+       """
 		action = False
 		pos = pygame.mouse.get_pos()
 		if self.rect.collidepoint(pos):
