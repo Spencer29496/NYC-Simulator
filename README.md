@@ -86,6 +86,11 @@ The Project is broken down into the following file structure:
 
 | Step                  | Procedure     | Expected Results  | Actual Results |
 | ----------------------|:-------------:| -----------------:| -------------- |
-|  1  | Run Counter Program  | GUI window appears with count = 0  |          |
-|  2  | click count button  | display changes to count = 1 |                 |
-etc...
+|  1  | Open terminal, navigate to folder and type "python3 main.py"  | program starts and siaplsy start screen with start button  | program starts and siaplsy start screen with start button         |
+|  2  | Press the start button to intiate the game  | the bar scene loads onto screen with 2 more options for the user to choose between |  the bar scene loads onto screen with 2 more options for the user to choose between               |
+|  3  | Choose an option to continue from the bar scene  | Based on the option chosen from the GUI buttons, the game will either continue and load the alley scene or you will end up in the hospital and lose  |  Based on the option chosen from the GUI buttons, the game will either continue and load the alley scene or you will end up in the hospital and lose        |
+|  4  | Choose an option to continue from the alley scene  | Based on the option chosen from the GUI buttons, the game will either continue and load the taxi scene or you will end up in the hospital and lose  | Based on the option chosen from the GUI buttons, the game will either continue and load the taxi scene or you will end up in the hospital and lose                 |
+|  5  | Choose an option to continue from the taxi scene  | Based on the option chosen from the GUI buttons, the game will either continue and load the victory scene or you will end up in the hospital and lose  | Based on the option chosen from the GUI buttons, the game will either continue and load the victory scene or you will end up in the hospital and lose          |
+
+
+
