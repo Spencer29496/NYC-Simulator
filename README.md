@@ -39,16 +39,19 @@
 
 ## Program Design *(Backend Specialist)*
 * Non-Standard libraries
-    * N/A
+    * Pygame
     * For each additional module you should include
-        * url for the module documentation
-        * a short description of the module
+        * https://www.pygame.org/docs/
+        * This module is used to create the screen and game
 * Class Interface Design
     * << A simple drawing that shows the class relationships in your code (see below for an example). >>
-        * ![class diagram](assets/class_diagram.jpg)
+        * ![class diagram](assets/Diagram.jpg)
     * This does not need to be overly detailed, but should show how your code fits into the Model/View/Controller paradigm.
 * Classes
-    * << You should have a list of each of your classes with a description. >>
+    * Contoller class - sets the instance variables for the game and carries out the process of loading all the GUI and image components onto the screen
+      Button class - provides a GUI button that we use to change the scenes as the game progresses
+      Player class - provides the captioning and player image for each screen as the game goes on with the font
+      Decisions class - provides the background and music for each screen as the player picks their choice
 
 ## Project Structure *(Software Lead)*
 
