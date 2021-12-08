@@ -44,9 +44,11 @@
         * https://www.pygame.org/docs/
         * This module is used to create the screen and game
 * Class Interface Design
-    *
-
-      ![](assets/Diagram.jpg)
+    * ![](assets/startimage.png)
+    * ![](assets/barimage.png)
+    * ![](assets/alleyimage.png)
+    * ![](assets/taxiimage.png)
+    * ![](assets/Diagram.jpg)
     * This does not need to be overly detailed, but should show how your code fits into the Model/View/Controller paradigm.
 * Classes
     * Contoller class - sets the instance variables for the game and carries out the process of loading all the GUI and image components onto the screen
