@@ -107,6 +107,7 @@ The Project is broken down into the following file structure:
    
 * etc
     * foldercontents.txt
+    * 
 ***
 
 ## Tasks and Responsibilities *(Software Lead)*
